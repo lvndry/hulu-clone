@@ -1,9 +1,12 @@
 import Head from "next/head";
 
 import Header from "../components/Header";
+import MoviesList from "../components/MoviesList";
 import Nav from "../components/Nav";
 
-export default function Home() {
+import requests from "../utils/requests";
+
+export default function Home({ movies }) {
   return (
     <div>
       <Head>
@@ -16,6 +19,29 @@ export default function Home() {
       </Head>
       <Header />
       <Nav />
+      <MoviesList movies={movies.results} />
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const genre = context.query.genre;
+  const params = new URLSearchParams({
+    api_key: process.env.TMDB_API_KEY,
+    language: "en-US",
+  });
+
+  const baseURL = "https://api.themoviedb.org/3";
+
+  const url = `${baseURL}${
+    requests[genre]?.endpoint || requests.trending.endpoint
+  }?${params}`;
+
+  const movies = await fetch(url).then((res) => res.json());
+
+  return {
+    props: {
+      movies,
+    },
+  };
 }

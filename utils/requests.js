@@ -5,7 +5,7 @@ const requests = {
     title: "Trending",
     endpoint: "/trending/all/week",
   },
-  topRated: {
+  top_rated: {
     title: "Top Rated",
     endpoint: "/movie/top_rated",
   },
@@ -29,7 +29,7 @@ const requests = {
     title: "Mystery",
     endpoint: "/discover/movie?with_genre=9648",
   },
-  sciFi: {
+  sci_fi: {
     title: "Sci Fi",
     endpoint: "/discover/movie?with_genre=878",
   },
@@ -37,7 +37,7 @@ const requests = {
     title: "Animation",
     endpoint: "/discover/movie?with_genre=16",
   },
-  TV: {
+  tv: {
     title: "TV Show",
     endpoint: "/discover/movie?with_genre=10770",
   },
