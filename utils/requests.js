@@ -11,35 +11,43 @@ const requests = {
   },
   action: {
     title: "Action",
-    endpoint: "/discover/movie?with_genre=28",
-  },
-  comedy: {
-    title: "Comedy",
-    endpoint: "/discover/movie?with_genre=35",
-  },
-  horror: {
-    title: "Horror",
-    endpoint: "/discover/movie?with_genre=27",
-  },
-  romance: {
-    title: "Romance",
-    endpoint: "/discover/movie?with_genre=10749",
-  },
-  mystery: {
-    title: "Mystery",
-    endpoint: "/discover/movie?with_genre=9648",
-  },
-  sci_fi: {
-    title: "Sci Fi",
-    endpoint: "/discover/movie?with_genre=878",
+    endpoint: "/discover/movie",
+    genreID: 28,
   },
   animation: {
     title: "Animation",
-    endpoint: "/discover/movie?with_genre=16",
+    endpoint: "/discover/movie",
+    genreID: 16,
+  },
+  comedy: {
+    title: "Comedy",
+    endpoint: "/discover/movie",
+    genreID: 35,
+  },
+  horror: {
+    title: "Horror",
+    endpoint: "/discover/movie",
+    genreID: 27,
+  },
+  mystery: {
+    title: "Mystery",
+    endpoint: "/discover/movie",
+    genreID: 9648,
+  },
+  romance: {
+    title: "Romance",
+    endpoint: "/discover/movie",
+    genreID: 10749,
+  },
+  sci_fi: {
+    title: "Sci Fi",
+    endpoint: "/discover/movie",
+    genreID: 878,
   },
   tv: {
     title: "TV Show",
-    endpoint: "/discover/movie?with_genre=10770",
+    endpoint: "/discover/movie",
+    genreID: 10770,
   },
 };
 

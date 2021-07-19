@@ -26,10 +26,19 @@ export default function Home({ movies }) {
 
 export async function getServerSideProps(context) {
   const genre = context.query.genre;
-  const params = new URLSearchParams({
+  let params = new URLSearchParams({
     api_key: process.env.TMDB_API_KEY,
     language: "en-US",
   });
+
+  params =
+    requests[genre] && requests[genre].genreID
+      ? new URLSearchParams({
+          api_key: params.get("api_key"),
+          language: params.get("language"),
+          with_genres: requests[genre].genreID,
+        })
+      : params;
 
   const baseURL = "https://api.themoviedb.org/3";
 

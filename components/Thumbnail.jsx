@@ -11,11 +11,13 @@ const Thumbnail = forwardRef(({ movie }, ref) => {
       className="p-2 group cursor-pointer transition duration-200 transform ease-in sm:hover:scale-105 hover:z-50"
     >
       <Image
+        className="contain"
         layout="responsive"
         alt={movie.title}
         height={1000}
         width={1920}
         src={`${BASE_URL}${movie.backdrop_path || movie.poster_path}`}
+        priority
       />
       <div>
         <p className="truncate max-w-md">{movie.overview}</p>
